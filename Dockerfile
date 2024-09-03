@@ -13,12 +13,29 @@ RUN go mod download
 # Copy the source from the current directory to the Working Directory inside the container
 COPY . .
 
+# Docker Local Development
 # Set environment variables
-ENV DB_HOST=pgdb
+# ENV DB_HOST=pgdb
+# ENV DB_PORT=5432
+# ENV DB_NAME=gosampledb
+# ENV DB_USER=postgres
+# ENV DB_PASSWORD=123456
+# ENV DB_SSLMODE=disable
+# ENV DB_TIMEZONE=UTC
+# ENV DB_CONNECT_TIMEOUT=5
+# ENV JWT_SECRET=verysecret
+# ENV JWT_ISSUER=example.com
+# ENV JWT_AUDIENCE=example.com
+# ENV COOKIE_DOMAIN=localhost
+# ENV DOMAIN=example.com
+# ENV API_KEY=b41447e6319d1cd467306735632ba733
+
+# Docker on Render
+ENV DB_HOST=dpg-cr91e5lsvqrc739hurlg-a
 ENV DB_PORT=5432
 ENV DB_NAME=gosampledb
-ENV DB_USER=postgres
-ENV DB_PASSWORD=123456
+ENV DB_USER=gosampledb_user
+ENV DB_PASSWORD=96YfuD2iz9dovEcifUUKRPt8pezBSRdz
 ENV DB_SSLMODE=disable
 ENV DB_TIMEZONE=UTC
 ENV DB_CONNECT_TIMEOUT=5
